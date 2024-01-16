@@ -37,8 +37,8 @@ const isProduction = environment === 'production';
 
 // choose the correct targetPath based on the environment chosen
 const targetPath = isProduction
-  ? './src/environments/environment.prod.ts'
-  : './src/environments/environment.ts';
+  ? './src/environments/environment.ts'
+  : './src/environments/environment.prod.ts';
 
 //actual content to be compiled dynamically and pasted into respective environment files
 const environmentFileContent = `
