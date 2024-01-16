@@ -1,0 +1,46 @@
+<app-user-header></app-user-header>
+
+<div class="container">
+    <div class="row" style="padding-top: 100px;">
+        
+        <div class="col-md-6 col-sm-12">
+            <h5>Most Liked</h5>
+            <div style="width: 400px;">
+                <canvas id="myChart" ></canvas>
+            </div>
+        </div>
+       
+        <div class="col-md-6 col-sm-12">
+            <h5>Most Viewed</h5>
+            <div style="width: 500px;">
+                <canvas id="myChart2" ></canvas>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="col-md-6 col-sm-12">
+            <h5>Campus</h5>
+            <div style="width: 500px;">
+                <canvas id="myChart3" ></canvas>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h5>Category</h5>
+            <div style="width: 500px;">
+                <canvas id="myChart4" ></canvas>
+            </div>
+        </div>
+    </div>
+    
+</div>
+    
+    
+        
+    
+
+
+
+<div *ngIf="!isAuthorized()?navigation():null">
+  
+</div>

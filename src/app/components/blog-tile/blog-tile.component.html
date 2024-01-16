@@ -1,0 +1,136 @@
+
+<section id="#tile" class="light">
+
+    <h1 class="main">Experiences</h1>
+    <h3 class="subhead">Let's share</h3>
+    
+
+    <!-- <div style="text-align: center;" class="container">
+      <div style="vertical-align: middle;display:inline-block;" >
+        <h5 style="display:inline-block;"></h5>&nbsp;<button  class="btn btn-block question-bank" routerLink="/user/question-home">Question Bank</button>
+        
+      </div>
+    </div> -->
+    
+<br>
+<br>
+
+
+    <div class="container">
+      <div class="row">
+  
+        <div class="col-lg-3">
+          <label for="companyName">Company Name</label>
+          <select  class="form-control item" id="companyName" required [(ngModel)]="filter_companyName" name="companyName" >
+            <option  value="" disabled selected ><--Select the Company Name--></option>
+            <option *ngFor="let m of company_menu" value="{{m}}">{{m}}</option>
+        </select>
+        </div>
+        <div class="col-lg-3">
+          <label for="category">Category</label>
+          <select placeholder="Category" class="form-control item" id="category" required name="category" [(ngModel)]="filter_category" >
+            <option  value="" disabled selected  ><--Select the Category--></option>
+            <option value="Internship">Internship</option>
+            <option value="Full-time">Full-time</option>
+            <option value="InternAndFTE">Intern+FTE</option>
+          </select>
+        </div>
+
+        <div class="col-lg-3">
+          <label for="campus">Campus</label>
+
+          <select placeholder="Category" class="form-control item" id="campus" name="campus" [(ngModel)]="filter_campus">
+            <option  value="" disabled selected  ><--Select the Campus type--></option>
+              <option value="OnCampus">OnCampus</option>
+              <option value="OffCampus">OffCampus</option>
+          </select>
+        </div>
+
+        <div class="col-lg-3">
+          <label for="campus">Type of Round</label>
+
+          <select placeholder="Round" class="form-control item" id="round" required [(ngModel)]="filter_round" name="round" >
+            <option  value="" disabled selected ><--Select the Round--></option>
+              <option value="OA">Online Assessment</option>
+              <option value="Technical">Technical Interview</option>
+              <option value="Aptitute">Aptitute</option>
+              <option value="HR">HR</option>
+              <option value="Overall">Overall</option>
+          </select>    
+
+        </div>
+        
+      </div>
+      <div style="text-align: center;">
+        <button (click)="search()" class="btn btn-block search" >Search</button>
+        &nbsp;
+        <button (click)="Onload()" style="background-color: red;outline: 2px solid red;" class="btn btn-block search">Clear Filters</button>
+      </div>
+      
+    </div>
+    
+  <br>
+  <br>
+
+  
+  <div *ngIf="Cards===true" >
+    <div class="container py-2"  >
+  
+      &nbsp; &nbsp;<p style="opacity: 0.85;">{{blog[0].length}} record found</p>
+          <div class="row" >
+
+          <article class="col-md-6 col-sm-12" *ngFor="let b of blog[0]">
+
+          
+          <article class="postcard light green "  >
+              <a class="postcard__img_link"  >
+              </a>
+              <div class="postcard__text t-dark"   >
+                  <h1 class="postcard__title green"><a >{{b.companyName}}</a></h1>
+                  <div class="postcard__subtitle small">
+                      <time datetime="2020-05-25 12:00:00">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                        </svg> {{b.Cdate}}
+                      </time>
+                      
+                  </div>
+                  <div class="postcard__bar"></div>
+                  
+
+                  <div class="postcard__preview-txt truncate">{{(b.description.length>140)?(b.description | slice:0:150)+'...' :(b.description)}}<a routerLink="/user/blog-details/{{b._id}}"  class="read" *ngIf="b.description.length>100" ><p (click)="view(b._id,b)" >Read More</p></a> </div>
+                  <ul class="postcard__tagbox">
+                    <li class="tag__item"><a href="{{b.linkedIn}}" target="_blank"> <i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                      <li class="tag__item"><i class="fa fas fa-tag mr-2"></i> {{b.category}}</li>
+                      <li class="tag__item"><i class="fa fas fa-tag mr-2"></i> {{b.campus}}</li>
+                      <li class="tag__item"><i class="fa fas fa-tag mr-2"></i> {{b.round}}</li>
+                  </ul>
+                  <ul class="postcard__tagbox">
+                    <li class="tag__item">-{{b.writer}}</li>
+                </ul>
+                <ul class="postcard__tagbox">
+                  <li > 
+                    <!-- <svg  xmlns="http://www.w3.org/2000/svg" width="5%" viewBox="0 0 512 512"><style>svg{fill:#39b54a}</style><path d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z"/></svg>                   -->
+                    
+                  <svg (click)="toggleLike(b._id,b)" xmlns="http://www.w3.org/2000/svg" width="4%" viewBox="0 0 512 512"><style>svg{fill:#39b54a}</style><path d="M336 16V80c0 8.8-7.2 16-16 16s-16-7.2-16-16V16c0-8.8 7.2-16 16-16s16 7.2 16 16zm-98.7 7.1l32 48c4.9 7.4 2.9 17.3-4.4 22.2s-17.3 2.9-22.2-4.4l-32-48c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4zM135 119c9.4-9.4 24.6-9.4 33.9 0L292.7 242.7c10.1 10.1 27.3 2.9 27.3-11.3V192c0-17.7 14.3-32 32-32s32 14.3 32 32V345.6c0 57.1-30 110-78.9 139.4c-64 38.4-145.8 28.3-198.5-24.4L7 361c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l53 53c6.1 6.1 16 6.1 22.1 0s6.1-16 0-22.1L23 265c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l93 93c6.1 6.1 16 6.1 22.1 0s6.1-16 0-22.1L55 185c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l117 117c6.1 6.1 16 6.1 22.1 0s6.1-16 0-22.1l-93-93c-9.4-9.4-9.4-24.6 0-33.9zM433.1 484.9c-24.2 14.5-50.9 22.1-77.7 23.1c48.1-39.6 76.6-99 76.6-162.4l0-98.1c8.2-.1 16-6.4 16-16V192c0-17.7 14.3-32 32-32s32 14.3 32 32V345.6c0 57.1-30 110-78.9 139.4zM424.9 18.7c7.4 4.9 9.3 14.8 4.4 22.2l-32 48c-4.9 7.4-14.8 9.3-22.2 4.4s-9.3-14.8-4.4-22.2l32-48c4.9-7.4 14.8-9.3 22.2-4.4z"/></svg>
+                  &nbsp;
+                  <p style="opacity: 0.5;display: inline;">{{b.likes}} </p> 
+                  &nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <svg xmlns="http://www.w3.org/2000/svg"  width="4%" viewBox="0 0 576 512"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+                  &nbsp;
+                  <p style="opacity: 0.5;display: inline;">{{b.views}} </p> 
+                </li>
+              </ul>
+              
+              
+              </div>
+          </article> 
+        </article>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="Cards===false">
+      <h1 class="noRec">No Records Found!!</h1>
+  </div>
+  </section>

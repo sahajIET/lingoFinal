@@ -1,0 +1,48 @@
+<div *ngIf="isAuthorized()">
+
+
+<app-user-header></app-user-header>
+
+<div>
+  <div class="container">
+    <div class="registration-form">
+        <form>
+            <div class="form-icon">
+                <img src="../../../assets/Images/davv.png" alt="">
+            </div>
+            <table class="table " style="text-align: center;">
+                <thead>
+                  <tr>
+                    <th scope="col">Blog Code</th>
+                    <th scope="col">Company Name</th>
+                    <th scope="col">Actions</th>
+                    
+                  </tr>
+                </thead>
+                <tbody *ngFor="let b of myblogs[0]">
+                  <tr>
+                    <th scope="row">{{b._id}}</th>
+                    <td>{{b.companyName}}</td>
+                    <td>
+                        <button type="button"  routerLink="/user/update/{{b._id}}"  class="btn btn-warning">Edit</button>
+                        &nbsp;
+                        <button type="button" routerLink="/user/blog-details/{{b._id}}"  class="btn btn-info">View</button>
+                        &nbsp;
+                        <button type="button" (click)="deleteBlog(b._id)" class="btn btn-danger">Delete</button>
+                    </td>
+                    
+                  </tr>
+    
+                </tbody>
+              </table>
+            
+        </form>
+        
+    </div>
+    
+</div>
+</div>
+</div>
+<div *ngIf="!isAuthorized()?navigation():null">
+  
+</div>

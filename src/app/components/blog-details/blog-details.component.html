@@ -1,0 +1,46 @@
+
+
+
+
+  <div *ngIf="isAuthorized()" >
+    <app-user-header></app-user-header>
+    <div class="container">
+      <div class="registration-form">
+          <form>
+              <div class="form-icon">
+                  <img src="../../../assets/Images/davv.png" alt="">
+              </div>
+              
+              <div class="content">
+                  <h1 style="text-align: center;"> {{blog[0].companyName}}</h1>
+                  <br>
+                  <br>
+                  <br>
+
+                  <p class="tag__item"><a href="{{blog[0].linkedIn}}" target="_blank"> <i class="fa fa-linkedin" aria-hidden="true" style="color: black;" ></i></a></p>
+
+                  <p class="tag__item"><i class="fa fas fa-tag mr-2"></i> {{blog[0].campus}}</p>
+                  
+                  <p class="tag__item"><i class="fa fas fa-tag mr-2"></i> {{blog[0].category}}</p>
+                  <p class="tag__item"><i class="fa fas fa-tag mr-2"></i> {{blog[0].round}}</p>
+
+                  <br>
+                  <br>
+                  <p class="tag__item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                  </svg> {{blog[0].Cdate}}</p>
+                  <br>
+                  <br>
+
+                  <p style="text-align: center;">{{blog[0].description}}</p>
+              </div>
+              
+          </form>
+          
+      </div>
+      
+  </div>
+  </div>
+  <div *ngIf="!isAuthorized()?navigation():null">
+    
+</div>

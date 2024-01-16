@@ -1,0 +1,46 @@
+<div *ngIf="isAuthorized()">
+<app-question-header></app-question-header>
+
+<div>
+    <div class="container">
+      <div class="registration-form" >
+          <form>
+              <div class="form-icon">
+                  <img src="../../../assets/Images/davv.png" alt="">
+              </div>
+              <table class="table " style="text-align: center;">
+                  <thead>
+                    <tr>
+                      <th scope="col">Question Code</th>
+                      <th scope="col">Company Name</th>
+                      <th scope="col">Actions</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let b of myquestions[0]">
+                    <tr>
+                      <th scope="row">{{b._id}}</th>
+                      <td>{{b.companyName}}</td>
+                      <td>
+                          <button type="button"  routerLink="/user/question-home/question-edit/{{b._id}}"  class="btn btn-warning">Edit</button>
+                          &nbsp;
+                          <button type="button" routerLink="/user/question-home/question-details/{{b._id}}"  class="btn btn-info">View</button>
+                          &nbsp;
+                          <button type="button" (click)="deleteQuestion(b._id)" class="btn btn-danger">Delete</button>
+                      </td>
+                      
+                    </tr>
+      
+                  </tbody>
+                </table>
+              
+          </form>
+          
+      </div>
+      
+  </div>
+  </div>
+</div>
+<div *ngIf="!isAuthorized()?navigation():null">
+  
+</div>

@@ -1,0 +1,55 @@
+
+nav{
+    padding-left: 4rem;
+    padding-right: 4rem;
+    background-color: black;
+   
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    
+    
+  }
+  .transform{
+    
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+  }
+.over{
+  overflow-y: hidden;
+  
+}
+.head{
+    text-align: center;
+}
+.act,
+  .navbar ul li a:hover {
+    color: #39b54a !important;
+    border-bottom: 1px solid #39b54a;
+  }
+  .theme-text {
+    color: #39b54a !important;
+  }
+  .cen{
+  
+    @media only screen and (max-width:991px){
+      
+        text-align: center;
+       
+    }
+    }
+.nav_svg{
+    fill:#39b54a;
+}
+.user_details{
+    color: rgba(255,255,255,0.55);
+    
+}
+@media only screen and (max-width:991px) {
+
+    #hide{
+      display: none;
+    }
+    
+    }

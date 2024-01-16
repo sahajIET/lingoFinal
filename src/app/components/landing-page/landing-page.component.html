@@ -1,0 +1,224 @@
+<!-- HEADER -->
+<div *ngIf="isAuthorized()">
+
+
+<section id="header">
+    
+        <nav class="navbar navbar-expand-lg navbar-dark " [class.back]="back_var" >
+            <div class="container-fluid">
+                 <!-- <a class="navbar-brand theme-text" href="#">
+                    &nbsp;Better Home</a> -->
+                    <h1 class="text-white display-5 fw-bold">IET<span class="theme-text">Lingo</span></h1>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation" (click)="toggleCollapsed()" >
+                        <!-- <span class="navbar-toggler-icon"></span> -->
+                        <img src="{{user.photoUrl}}" width="30" alt="" style="border-radius: 100%;">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><style>svg{fill:white}</style><path d="M0 80c0-8.8 7.2-16 16-16H432c8.8 0 16 7.2 16 16s-7.2 16-16 16H16C7.2 96 0 88.8 0 80zM0 240c0-8.8 7.2-16 16-16H432c8.8 0 16 7.2 16 16s-7.2 16-16 16H16c-8.8 0-16-7.2-16-16zM448 400c0 8.8-7.2 16-16 16H16c-8.8 0-16-7.2-16-16s7.2-16 16-16H432c8.8 0 16 7.2 16 16z"/></svg>     -->
+                    </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 cen">
+                        <li class="nav-item">
+                            <a class="nav-link transform" aria-current="page" href="/user/landing/#header">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link transform" href="/user/landing/#about" >About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link transform" href="/user/landing/#companies" >Companies</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link transform" routerLink="/user/details" >Experiences</a>
+                        </li>
+                        <li class="nav-item">
+                      
+                            <a class="nav-link transform" href="/" (click)="logout()"> Log out</a>
+                        </li>
+                        
+                    </ul>
+
+                </div>
+            </div>
+            <a class="navbar-brand user_details" id="hide">
+                <img  src="{{user.photoUrl}}" width="30" class="d-inline-block align-top" style="border-radius: 100%;"/>
+          
+                <!-- {{social_user.email}} -->
+              </a>
+        </nav>
+        <!-- navbar code -->
+        <div class="container over">
+        <div class="head" >
+            <img src="../../../assets/Images/davv.png" alt="" class="logo-clg" [class.logo-clg1]="back_var">
+            
+            
+            <p class="text-clg">INSTITUTE OF ENGINEERING & TECHNOLOGY</p>
+        </div>
+        <div class="middle">
+            <h1 class="text-white display-3 fw-bold">We Help you to find <span class="theme-text">a better
+                    experience</span>.
+                </h1>
+                <br>
+                <div class="started">
+                 <h4 style="color: aliceblue;">Hey <span style="color: #04d9ff;">{{user.firstName}} </span>!!</h4>  <br> <a href="/user/details" >Experiences</a> &nbsp; <a href="/user/question-home" >Question Bank</a> 
+                </div>
+                <!-- #0093dd -->
+                    
+                
+        </div>
+        
+        
+        <div class="home-content__scroll" id="hide">
+            <a href="/user/landing/#about" class="scroll-link smoothscroll">
+                
+                <span>Scroll Down</span>
+            </a>
+        </div>
+        <div class="home-content__line" id="hide"></div>
+    </div>
+    
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+    <div class="col-full">
+        <div class="home-content__line2" id="hide"></div>
+        <h3 class="subhead">About Us</h3>
+        <h1 class="display-2">We’ve got everything you need to know and grab your placement<span style="color: #39b54a;">.</span> </h1>
+    </div>
+        <br>
+        <br>
+        
+     
+        
+        <div class="container bootstrap snippets bootdeys">
+            <div class="row">
+                
+                <div class="col-md-4 col-sm-6 content-card">
+                    <div class="card-big-shadow">
+                        <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
+                            <div class="content">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><style>svg{fill:#2e6c36}</style><path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z"/></svg>
+
+                                <h4 class="title"><a href="#">Internships</a></h4>
+                                <p class="description">Elevate your learning with our transformative internships. Gain real-world skills, forge valuable connections, and unlock endless career possibilities at IET.  </p>
+                            </div>
+                        </div> <!-- end card -->
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 content-card">
+                    <div class="card-big-shadow">
+                        <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
+                            <div class="content">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><style>svg{fill:#2e6c36}</style><path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+
+                                <h4 class="title"><a href="#">Full-time</a></h4>
+                                <p class="description">Prepare for success with full-time placements at IET. Experienced guidance,tailored pathways to your dream career. Invest in your future today. </p>
+                            </div>
+                        </div> <!-- end card -->
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 content-card">
+                    <div class="card-big-shadow">
+                        <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
+                            <div class="content">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#2e6c36}</style><path d="M32 0C14.3 0 0 14.3 0 32S14.3 64 32 64V75c0 42.4 16.9 83.1 46.9 113.1L146.7 256 78.9 323.9C48.9 353.9 32 394.6 32 437v11c-17.7 0-32 14.3-32 32s14.3 32 32 32H64 320h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V437c0-42.4-16.9-83.1-46.9-113.1L237.3 256l67.9-67.9c30-30 46.9-70.7 46.9-113.1V64c17.7 0 32-14.3 32-32s-14.3-32-32-32H320 64 32zM96 75V64H288V75c0 19-5.6 37.4-16 53H112c-10.3-15.6-16-34-16-53zm16 309c3.5-5.3 7.6-10.3 12.1-14.9L192 301.3l67.9 67.9c4.6 4.6 8.6 9.6 12.1 14.9H112z"/></svg>
+
+                                <h4 class="title"><a href="#">Experiences</a></h4>
+                                <p class="description">Discover a world of opportunities at IET. Immerse in diverse cultures, engage in impactful projects. Elevate your journey and shape your future.</p>
+                            </div>
+                        </div> <!-- end card -->
+                    </div>
+                </div>
+
+            </div>
+            </div>
+    
+</section>
+
+<!-- COMPANIES -->
+
+<section id="companies" class="companies">
+    <div class="col-full">
+        
+        <h3 class="subhead">companies</h3>
+        <h1 class="display-2">IET has been honoured to be visited by such mega organizations</h1>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 ">
+                
+                    
+                        <img src="../../../assets/Images/accenture.png" alt="accenture_logo" class="accenture_logo">
+                    
+            </div>
+            <div class="col-lg-3 col-md-4 ">
+                
+                    
+                <img src="../../../assets/Images/avalara.png" alt="avalara_logo" class="avalara_logo">
+            
+            </div>
+            <div class="col-lg-3 col-md-4 ">
+                
+                    
+                <img src="../../../assets/Images/barclays.png" alt="barclays_logo" class="barclays_logo">
+            
+            </div>
+            <div class="col-lg-3 col-md-4 ">
+                
+                    
+                <img src="../../../assets/Images/deutsche.png" alt="deutsche_logo" class="deutsche_logo">
+            
+            </div>
+            <div class="col-lg-3 col-md-4 ">
+                
+                    
+                <img src="../../../assets/Images/groww.png" alt="groww_logo" class="groww_logo">
+            
+            </div>
+            <div class="col-lg-3 col-md-4 ">
+                
+                    
+                <img src="../../../assets/Images/nuclei.png" alt="nuclei_logo" class="nuclei_logo">
+            
+            </div>
+            <div class="col-lg-3 col-md-4 ">
+                
+                    
+                <img src="../../../assets/Images/zs.png" alt="zs_logo" class="zs_logo">
+            
+            </div>
+            <div class="col-lg-3 col-md-4 ">
+                
+                    
+                <img src="../../../assets/Images/zscaler.png" alt="zscaler_logo" class="zscaler_logo">
+            
+            </div>
+
+            
+        </div>
+    </div>
+    <div class="home-content__line3" id="hide1"></div>
+</section>
+<section id="foot" class="foot">
+    <div class="home-content__line4" id="hide1"></div>
+    <div class="container">
+        <h2>Lingo.</h2>
+        <p>Introducing IETLingo, an exclusive platform tailored for IET students. Unveil a treasure trove of shared experiences – from internships to full-time placements. Connect, inspire, and thrive as you explore real-life success stories within our vibrant IET community.With IETLingo, empower your career journey with firsthand insights and mentorship from those who’ve navigated similar paths. Ignite your potential, broaden your horizons, and embark on a transformative adventure where your ambitions find their wings. Your path to success starts with shared wisdom, and it begins here at IETLingo.</p>
+    </div>
+    <br>
+    <br>
+    <p>© Copyright IETLingo {{year}}. Made is association with <a href="https://www.ietdavv.edu.in/" target="_blank">IET DAVV</a></p>
+    <p>Developed by <a href="https://www.linkedin.com/in/sahaj-bagherwal-813300200/" target="_blank">Sahaj Bagherwal</a>, <a href="https://www.linkedin.com/in/ritikjainrj18/" target="_blank">Ritik Jain</a> and <a href="https://www.linkedin.com/in/p1yu5h0/" target="_blank">Piyush Agrawal</a></p>
+</section>
+</div>
+<div *ngIf="!isAuthorized()?navigation():null">
+
+</div>

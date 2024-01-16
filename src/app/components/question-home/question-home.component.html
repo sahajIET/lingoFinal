@@ -1,0 +1,122 @@
+<div *ngIf="isAuthorized()">
+    <app-question-header></app-question-header>
+    <div class="container">
+        <div class="row">
+            <div class="cont">
+                <h1 class="main">Question Bank</h1>
+                <h3 class="subhead">Let's share</h3>
+                
+            </div>
+        </div>
+
+
+        <div class="row" style="padding-top: 100px;">
+
+          <div class="col-lg-3">
+            <label for="companyName">Company Name</label>
+            <select placeholder="companyName" class="form-control item" id="companyName" required [(ngModel)]="filter_companyName" name="companyName" >
+              <option  value="" disabled selected class="opa" ><--Select the Company Name--></option>
+                <option *ngFor="let m of company_menu" value="{{m}}">{{m}}</option>
+          </select>
+          </div>
+            <div class="col-lg-3">
+              <label for="category">Category</label>
+              <select placeholder="Category" class="form-control item" id="category" required name="category" [(ngModel)]="filter_category" >
+                <option  value="" disabled selected class="opa" ><--Select the Category--></option>
+                  <option value="Internship">Internship</option>
+                <option value="Full-time">Full-time</option>
+                <option value="InternAndFTE">Intern+FTE</option>
+              </select>
+            </div>
+    
+            <div class="col-lg-3">
+              <label for="campus">Campus</label>
+    
+              <select placeholder="Category" class="form-control item" id="campus" name="campus" [(ngModel)]="filter_campus">
+                <option  value="" disabled selected class="opa" ><--Select the Campus type--></option>
+                  <option value="OnCampus">OnCampus</option>
+                  <option value="OffCampus">OffCampus</option>
+              </select>
+            </div>
+    
+            <div class="col-lg-3">
+              <label for="campus">Type of Round</label>
+    
+              <select placeholder="Round" class="form-control item" id="round" required [(ngModel)]="filter_round" name="round" >
+                <option  value="" disabled selected class="opa" ><--Select the Round--></option>
+                  <option value="OA">Online Assessment</option>
+                  <option value="Technical">Technical Interview</option>
+                  <option value="Aptitute">Aptitute</option>
+                  <option value="HR">HR</option>
+                  <option value="Overall">Overall</option>
+              </select>    
+    
+            </div>
+            
+          </div>
+          <div style="text-align: center;">
+            <button (click)="search()" class="btn btn-block question-bank" >Search</button>
+            &nbsp;
+            <button (click)="Onload()" style="background-color: red;outline: 2px solid red;" class="btn btn-block search">Clear Filters</button>
+          </div>   
+    </div>
+
+    <div *ngIf="Cards===true" >
+        <div class="container py-2"  >
+      
+          &nbsp; &nbsp;<p style="opacity: 0.85;">{{question[0].length}} record found</p>
+              <div class="row" >
+    
+              <article class="col-md-6 col-sm-12"  *ngFor="let q of question[0]">
+    
+              
+              <article class="postcard light green " style="outline: 1px solid #7d12ff;" >
+                  <a class="postcard__img_link"  >
+                  </a>
+                  <div class="postcard__text t-dark"   >
+                      <h1 class="postcard__title green"><a >{{q.companyName}}</a></h1>
+                      <div class="postcard__subtitle small">
+                          <time datetime="2020-05-25 12:00:00">
+                          </time>
+                          
+                      </div>
+                      <div class="postcard__bar"></div>
+                      
+    
+                      <div class="postcard__preview-txt truncate">{{(q.question_arr[0].length>10)?(q.question_arr[0] | slice:0:14)+'...' :(q.question_arr[0])}}<a routerLink="/user/question-home/question-details/{{q._id}}"  class="read" *ngIf="q.question_arr[0].length>10" ><p (click)="view(q._id,q)">Read More</p></a> </div>
+    
+                      <ul class="postcard__tagbox">
+                        <li class="tag__item"><a href="{{q.linkedIn}}" target="_blank"> <i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                          <li class="tag__item"><i class="fa fas fa-tag mr-2"></i> {{q.category}}</li>
+                          <li class="tag__item"><i class="fa fas fa-tag mr-2"></i> {{q.campus}}</li>
+                          <li class="tag__item"><i class="fa fas fa-tag mr-2"></i> {{q.round}}</li>
+                      </ul>
+                      <ul class="postcard__tagbox">
+                        <li class="tag__item">-{{q.writer}}</li>
+                    </ul>
+                    <ul class="postcard__tagbox">
+                      <li > <svg (click)="toggleLike(q._id,q)" xmlns="http://www.w3.org/2000/svg" width="4%" viewBox="0 0 512 512"><style>svg{fill:#7d12ff}</style><path d="M336 16V80c0 8.8-7.2 16-16 16s-16-7.2-16-16V16c0-8.8 7.2-16 16-16s16 7.2 16 16zm-98.7 7.1l32 48c4.9 7.4 2.9 17.3-4.4 22.2s-17.3 2.9-22.2-4.4l-32-48c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4zM135 119c9.4-9.4 24.6-9.4 33.9 0L292.7 242.7c10.1 10.1 27.3 2.9 27.3-11.3V192c0-17.7 14.3-32 32-32s32 14.3 32 32V345.6c0 57.1-30 110-78.9 139.4c-64 38.4-145.8 28.3-198.5-24.4L7 361c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l53 53c6.1 6.1 16 6.1 22.1 0s6.1-16 0-22.1L23 265c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l93 93c6.1 6.1 16 6.1 22.1 0s6.1-16 0-22.1L55 185c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l117 117c6.1 6.1 16 6.1 22.1 0s6.1-16 0-22.1l-93-93c-9.4-9.4-9.4-24.6 0-33.9zM433.1 484.9c-24.2 14.5-50.9 22.1-77.7 23.1c48.1-39.6 76.6-99 76.6-162.4l0-98.1c8.2-.1 16-6.4 16-16V192c0-17.7 14.3-32 32-32s32 14.3 32 32V345.6c0 57.1-30 110-78.9 139.4zM424.9 18.7c7.4 4.9 9.3 14.8 4.4 22.2l-32 48c-4.9 7.4-14.8 9.3-22.2 4.4s-9.3-14.8-4.4-22.2l32-48c4.9-7.4 14.8-9.3 22.2-4.4z"/></svg>
+                        &nbsp;
+                        <p style="opacity: 0.5;display: inline;">{{q.likes}} </p> 
+                        &nbsp;         
+                        &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <svg xmlns="http://www.w3.org/2000/svg"  width="4%" viewBox="0 0 576 512"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+                        &nbsp;
+                        <p style="opacity: 0.5;display: inline;">{{q.views}} </p> 
+                      </li>
+                  </ul>
+                  </div>
+              </article> 
+            </article>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="Cards===false">
+          <h1 class="noRec">No Records Found!!</h1>
+      </div>
+
+</div>
+<div *ngIf="!isAuthorized()?navigation():null">
+  
+</div>

@@ -1,0 +1,12 @@
+<div id="notfound" *ngIf="isAuthorized()===false" >
+    <div class="notfound">
+        <div class="notfound-404">
+            <h1>Oops!</h1>
+            <h2>401 - Unauthorized</h2>
+        </div>
+        <a href="/">⮐ Back to Homepage</a>
+    </div>
+</div>
+<div *ngIf="isAuthorized()">
+
+</div>

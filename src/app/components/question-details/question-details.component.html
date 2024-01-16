@@ -1,0 +1,43 @@
+
+
+
+
+
+<div *ngIf="isAuthorized()" >
+    <app-question-header></app-question-header>
+    <div class="container">
+      <div class="registration-form">
+          <form>
+              <div class="form-icon">
+                  <img src="../../../assets/Images/davv.png" alt="">
+              </div>
+              
+              <div class="content">
+                  <h1 style="text-align: center;"> {{question[0].companyName}}</h1>
+                  <br>
+                  <br>
+                  <br>
+
+                  <p class="tag__item"><a href="{{question[0].linkedIn}}" target="_blank"> <i class="fa fa-linkedin" aria-hidden="true" style="color: black;" ></i></a></p>
+
+                  <p class="tag__item"><i class="fa fas fa-tag mr-2"></i> {{question[0].campus}}</p>
+                  
+                  <p class="tag__item"><i class="fa fas fa-tag mr-2"></i> {{question[0].category}}</p>
+                  <p class="tag__item"><i class="fa fas fa-tag mr-2"></i> {{question[0].round}}</p>
+
+                  <br>
+                  <br>
+                
+
+                  <p style="text-align: center;" *ngFor="let q of question[0].question_arr">{{q}}</p>
+              </div>
+              
+          </form>
+          
+      </div>
+      
+  </div>
+  </div>
+  <div *ngIf="!isAuthorized()?navigation():null">
+    
+</div>

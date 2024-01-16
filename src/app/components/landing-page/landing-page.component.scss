@@ -1,0 +1,442 @@
+#header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("../../../assets/Images/pexels-rubenstein-rebello-4094182.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    
+  }
+
+  nav{
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+.back{
+  background: rgba(90, 90, 90, 0.7);
+  backdrop-filter: blur(20px);
+  //background-color: #000;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.over{
+  overflow-y: hidden;
+  
+}
+.head{
+    text-align: center;
+}
+
+.logo-clg{
+    width: 5%;
+    margin-top: 5rem;
+}
+.logo-clg1{
+  margin-top: 9rem;
+}
+.transform{
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+}
+
+.text-clg{
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  margin-top: 15px;
+}
+
+  .act,
+  .navbar ul li a:hover {
+    color: #39b54a !important;
+    border-bottom: 1px solid #39b54a;
+  }
+  .theme-text {
+    color: #39b54a !important;
+  }
+
+.cen{
+  
+@media only screen and (max-width:991px){
+  
+    text-align: center;
+   
+}
+}
+
+  .middle {
+    
+    display:block;
+    justify-content: flex-start;
+    align-items: center;
+    height: 90vh;
+    width: 70%;
+    margin-top: 6rem;
+    @media screen and (max-width:1200px) {
+      margin: auto;
+      margin-top: 6rem;
+      text-align: center;
+      
+  }
+  }
+  .middle h1 {
+    font-size: 4.5rem;
+    @media screen and (max-width:1200px) {
+      text-align: center;
+      font-size: 2.5rem;
+      
+  }
+  }
+  
+  .started{
+    a {
+      margin-top: 3rem;
+      text-decoration: none;
+      color: #000;
+      background: #fff;
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      text-transform: capitalize;
+  }
+    a:hover {
+      margin-top: 3rem;
+      text-decoration: none;
+      color: #000;
+      background: #39b54a;
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      text-transform: capitalize;
+    }
+  }
+  
+@media only screen and (max-width:991px) {
+
+#hide{
+  display: none;
+}
+
+}
+
+@media only screen and (max-width:1400px) {
+
+  #hide1{
+    display: none;
+  }
+}  
+
+  .home-content__scroll {
+    position: absolute;
+    right: 9.5rem;
+    bottom: 8.4rem;
+}
+
+.home-content__scroll a {
+  font-family: "Poppins";
+  text-decoration: none;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  color: #FFFFFF;
+  position: relative;
+  display: inline-block;
+  line-height: 3rem;
+  padding-left: 2rem;
+}
+
+.home-content__scroll a::before {
+  border-bottom: 2px solid #39b54a;
+  border-right: 2px solid #39b54a;
+  content: '';
+  display: block;
+  height: 8px;
+  width: 8px;
+  margin-top: -6px;
+  pointer-events: none;
+  position: absolute;
+  rotate: 45deg;
+  left: 0;
+  top: 50%;
+}
+
+.home-content__line {
+  display: block;
+  width: 2px;
+  height: 10.2rem;
+  background-color: #39b54a;
+  position: absolute;
+  right: 7.2rem;
+  bottom: 0;
+
+}
+.home-content__line2 {
+  display: block;
+  width: 2px;
+  height: 10.2rem;
+  background-color: #39b54a;
+  position: absolute;
+  right: 7.2rem;
+  top: 0;
+}
+
+.home-content__line3 {
+  display: block;
+  width: 2px;
+  height: 10.2rem;
+  background-color: #39b54a;
+  position: absolute;
+  
+  right: 45rem;
+  bottom: 0;
+}
+.home-content__line4 {
+  display: block;
+  width: 2px;
+  height: 10.2rem;
+  background-color: #39b54a;
+  position: absolute;
+  
+  right: 45rem;
+  top: 0;
+}
+.about, .companies {
+  padding-top: 12.2rem;
+  padding-bottom: 13.2rem;
+  background-color: #FFFFFF;
+  color: #757575;
+  position: relative;
+ text-align: center;
+  .subhead {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.333;
+    text-transform: uppercase;
+    letter-spacing: .25rem;
+    color: #39b54a;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.display-2 {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size:3rem;
+  line-height: 1.255;
+  color: #000000;
+  margin-top: 0.6rem;
+  padding: 0 15rem;
+  @media only screen and (max-width:991px) {
+    font-size: 2rem;
+    padding: 0 8rem;
+  }
+  
+}
+}
+
+
+
+
+.card-big-shadow {
+  max-width: 100%;
+  position: relative;
+}
+
+.coloured-cards .card {
+  margin-top: 30px;
+}
+
+.card[data-radius="none"] {
+  border-radius: 0px;
+}
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+  background-color: #FFFFFF;
+  color: #252422;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+
+.card[data-background="image"] .title, .card[data-background="image"] .stats, .card[data-background="image"] .category, .card[data-background="image"] .description, .card[data-background="image"] .content, .card[data-background="image"] .card-footer, .card[data-background="image"] small, .card[data-background="image"] .content a, .card[data-background="color"] .title, .card[data-background="color"] .stats, .card[data-background="color"] .category, .card[data-background="color"] .description, .card[data-background="color"] .content, .card[data-background="color"] .card-footer, .card[data-background="color"] small, .card[data-background="color"] .content a {
+  color: #000;
+}
+.card.card-just-text .content {
+  padding: 50px 65px;
+  text-align: center;
+}
+.card .content {
+  padding: 20px 20px 10px 20px;
+}
+
+
+.card .category, .card .label {
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.card-big-shadow:before {
+  background-image: url("http://static.tumblr.com/i21wc39/coTmrkw40/shadow.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  bottom: -12%;
+  content: "";
+  display: block;
+  left: -12%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+h4, .h4 {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+h6, .h6 {
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.card .description {
+  font-size: 16px;
+  color: #66615b;
+}
+.content-card{
+  margin-top:30px;    
+}
+a{
+  text-decoration: none;
+}
+
+/*======== COLORS ===========*/
+.card[data-color="blue"] {
+  background: #b8d8d8;
+}
+.card[data-color="blue"] .description {
+  color: #506568;
+}
+.card[data-color="blue"] .category {
+  color: #7a9e9f;
+}
+
+
+.card[data-color="green"] {
+  background: #d5e5a3;
+}
+.card[data-color="green"] .description {
+  color: #2e6c36;
+}
+.card[data-color="green"] .category {
+  color: #2e6c36;
+}
+
+.card[data-color="yellow"] {
+  background: #ffe28c;
+}
+.card[data-color="yellow"] .description {
+  color: #b25825;
+}
+.card[data-color="yellow"] .category {
+  color: #d88715;
+}
+
+.card[data-color="brown"] {
+  background: #2e6c36;
+}
+.card[data-color="brown"] .description {
+  color: #000;
+}
+.card[data-color="brown"] .category {
+  color: #000;
+}
+
+.card[data-color="purple"] {
+  background: #baa9ba;
+}
+.card[data-color="purple"] .description {
+  color: #3a283d;
+}
+.card[data-color="purple"] .category {
+  color: #5a283d;
+}
+
+.card[data-color="orange"] {
+  background: #ff8f5e;
+}
+.card[data-color="orange"] .description {
+  color: #772510;
+}
+.card[data-color="orange"] .category {
+  color: #e95e37;
+}
+
+
+.companies{
+  background-color: #e6e6e6;
+
+
+  img{
+    width: 60%;
+
+    @media only screen and (max-width:768px){
+      width: 30%;
+    }
+  }
+  .avalara_logo{
+    width: 30%;
+    @media only screen and (max-width:768px){
+      width: 15%;
+    }
+  }
+  .barclays_logo{
+    width: 100%;
+    @media only screen and (max-width:768px){
+      width: 50%;
+    }
+  }
+  .zscaler_logo{
+    width: 50%;
+    @media only screen and (max-width:768px){
+      width: 25%;
+    }
+  }
+  .zs_logo{
+    width: 30%;
+    @media only screen and (max-width:768px){
+      width: 15%;
+    }
+  }
+}
+
+.foot{
+  padding-top: 12.2rem;
+  padding-bottom: 1.2rem;
+  background-color: #111111;
+  color: rgba(255,255,255,0.3);
+  position: relative;
+ text-align: center;
+
+ h2{
+  color: #39b54a;
+ }
+ a{
+  color: white;
+  text-decoration: none;
+  font-family:"Poppinsthin";
+  
+ }
+ a:hover{
+  color: #39b54a;
+ }
+ overflow-y: hidden;
+}
